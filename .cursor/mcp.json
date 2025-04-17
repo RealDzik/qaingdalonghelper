@@ -1,0 +1,18 @@
+{
+    "mcpServers": {
+      "shrimp-task-manager": {
+        "command": "node",
+        "args": ["d:/mcp/mcp-shrimp-task-manager/dist/index.js"],
+        "env": {
+          "DATA_DIR": "D:/workspace/QiangDaLong/data"
+        }
+      },
+      "mdmarker": {
+        "command": "cmd",
+        "args": [
+          "/c",
+          "mdmarker --work-dir D:/workspace/QiangDaLong/plan"
+        ]
+      }
+    }
+  }

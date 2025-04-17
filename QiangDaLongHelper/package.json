@@ -1,0 +1,48 @@
+{
+  "name": "qiangdalonghelper",
+  "version": "0.1.1",
+  "description": "三国志战略版抢大龙辅助工具",
+  "main": "dist/main.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "npm run build && electron .",
+    "dist": "npm run build && npx electron-builder",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "三国志战略版",
+    "抢大龙",
+    "辅助",
+    "electron"
+  ],
+  "author": "Your Name or Org",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@types/node": "^20.12.12",
+    "electron": "^30.0.9",
+    "electron-builder": "^24.13.3",
+    "typescript": "^5.4.5"
+  },
+  "build": {
+    "appId": "com.yourorg.qiangdalonghelper",
+    "productName": "抢大龙助手",
+    "directories": {
+      "output": "release/"
+    },
+    "files": [
+      "dist/",
+      "src/index.html",
+      "src/style.css",
+      "package.json"
+    ],
+    "win": {
+      "target": "nsis",
+      "icon": "build/icon.ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
+    }
+  }
+}

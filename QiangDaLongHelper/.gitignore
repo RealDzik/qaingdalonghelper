@@ -1,0 +1,30 @@
+# Dependencies
+/node_modules
+
+# Compiled output
+/dist
+
+# Packaged application / Release builds
+/release
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Operating System files
+.DS_Store
+._*
+Thumbs.db
+
+# IDE config
+.vscode/
+.idea/
+*.code-workspace
+
+# Environment variables
+.env*
+!.env.example
+
+# Optional build artifacts (add if needed)
+# build/ 

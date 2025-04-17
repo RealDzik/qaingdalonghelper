@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>抢大龙助手</title>
+    <!-- Recommended: Add Content Security Policy -->
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline';">
+    <link rel="stylesheet" href="./style.css"> <!-- Link to future CSS file -->
+</head>
+<body>
+    <div class="main-container"> <!-- New main container for flex layout -->
+        <div class="left-panel">
+            <h1>抢大龙助手</h1> <!-- Title inside left panel -->
+            <section id="config-panel">
+                <h2>配置</h2>
+                <label>总耐久度: <input type="number" id="total-durability" value="400000"></label>
+                <label>轮次时长(分): <input type="number" id="round-duration" value="5"></label>
+                <label>行军时间(分): <input type="number" id="travel-time" value="5"></label>
+            </section>
+
+            <section id="status-display">
+                <h2>状态</h2>
+                <p id="status-message">请设置总耐久度，并在首次下降后输入当前耐久度。</p>
+                <p id="error-message" class="error-message"></p>
+            </section>
+            
+            <section id="data-display">
+                <h2>数据</h2>
+                <p>敌方攻击力/轮: <span id="enemy-attack">N/A</span></p>
+                <p>我方攻击力/轮: <span id="ally-attack">N/A</span></p>
+                <p>当前剩余耐久度: <span id="current-durability-display">N/A</span></p>
+                <p>预测攻击时间: <span id="predicted-time">N/A</span></p>
+            </section>
+            
+            <section id="durability-input">
+                 <!-- Keep h2 or remove for tighter layout? -->
+                <input type="number" id="durability-input-value" placeholder="输入当前城池耐久">
+                <button id="submit-durability">记录</button>
+            </section>
+
+            <section id="action-buttons">
+                 <!-- Keep h2 or remove? -->
+                <button id="btn-calc-enemy" disabled>计算敌方攻击力</button>
+                <button id="btn-calc-ally" disabled>计算我方攻击力</button>
+                <button id="btn-predict" disabled>开始/更新预测</button>
+                <button id="btn-reset">重置状态</button> 
+            </section>
+        </div> <!-- End left-panel -->
+
+        <div class="right-panel">
+            <section id="records-display">
+                 <h2>记录日志</h2>
+                 <ul id="records-list"></ul>
+            </section>
+        </div> <!-- End right-panel -->
+    </div> <!-- End main-container -->
+
+    <!-- Remove the external script tag -->
+    <!-- <script src="../dist/renderer.js"></script> -->
+
+    <!-- Load the renderer script using require, enabled by nodeIntegration:true -->
+    <script>
+      require('../dist/renderer.js');
+    </script>
+</body>
+</html> 
